@@ -1,16 +1,9 @@
 import { z } from "zod";
 import { body, owner, response } from "@/core/http";
 import { getDb } from "@/core/db";
-import {
-  getRun,
-  updateBrief,
-  replayRun,
-  claimAiCall,
-  saveAnalysis,
-  createPlan,
-} from "@/core/repository";
-import { AppError, briefSchema, siteIdSchema } from "@/core/model";
-import { analyze, generateCreative } from "@/core/ai";
+import { updateBrief, replayRun } from "@/core/repository";
+import { AppError, briefSchema } from "@/core/model";
+import { connectAgent, disconnectAgent } from "@/core/mcp";
 export const runtime = "nodejs";
 export async function POST(
   request: Request,
@@ -23,26 +16,14 @@ export async function POST(
       db = await getDb();
     if (action === "brief")
       return updateBrief(db, id, who, briefSchema.parse(input));
-    if (action === "replay") {
-      z.object({}).strict().parse(input);
-      return replayRun(db, id, who);
-    }
-    if (action === "analyze") {
-      z.object({}).strict().parse(input);
-      const run = await getRun(db, id, who);
-      await claimAiCall(db, id, who);
-      const { value, model } = await analyze(run);
-      return saveAnalysis(db, run, value, model);
-    }
-    if (action === "generate") {
-      const { siteId } = z
-          .object({ siteId: siteIdSchema })
-          .strict()
-          .parse(input),
-        run = await getRun(db, id, who);
-      await claimAiCall(db, id, who);
-      return createPlan(db, run, siteId, await generateCreative(run, siteId));
-    }
-    throw new AppError("not_found", "Unknown campaign action.", 404);
+    z.object({}).strict().parse(input);
+    if (action === "replay") return replayRun(db, id, who);
+    if (action === "connect") return connectAgent(db, id, who);
+    if (action === "disconnect") return disconnectAgent(db, id, who);
+    throw new AppError(
+      "not_found",
+      "Unknown campaign action. Use your connected AI for recommendations and drafts.",
+      404,
+    );
   });
 }

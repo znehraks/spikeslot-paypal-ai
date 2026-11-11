@@ -5,6 +5,8 @@ export type QueryDb = Pick<PGlite, "query">;
 const schema = `
 CREATE TABLE IF NOT EXISTS demo_runs (id TEXT PRIMARY KEY, owner TEXT NOT NULL, data JSONB NOT NULL, version INTEGER NOT NULL DEFAULT 0, ai_calls INTEGER NOT NULL DEFAULT 0, created_at BIGINT NOT NULL);
 CREATE INDEX IF NOT EXISTS run_owner ON demo_runs(owner);
+CREATE TABLE IF NOT EXISTS mcp_connections (run_id TEXT PRIMARY KEY REFERENCES demo_runs(id), token_hash TEXT NOT NULL UNIQUE, expires_at BIGINT NOT NULL, revoked BOOLEAN NOT NULL DEFAULT FALSE);
+CREATE TABLE IF NOT EXISTS mcp_drafts (run_id TEXT NOT NULL REFERENCES demo_runs(id), request_id TEXT NOT NULL, input JSONB NOT NULL, plan_id TEXT NOT NULL, PRIMARY KEY(run_id,request_id));
 CREATE TABLE IF NOT EXISTS plans (id TEXT PRIMARY KEY, run_id TEXT NOT NULL REFERENCES demo_runs(id), data JSONB NOT NULL, version INTEGER NOT NULL DEFAULT 0);
 CREATE UNIQUE INDEX IF NOT EXISTS paypal_order_unique ON plans((data->>'orderId')) WHERE data->>'orderId' IS NOT NULL;
 CREATE UNIQUE INDEX IF NOT EXISTS paypal_capture_unique ON plans((data->>'captureId')) WHERE data->>'captureId' IS NOT NULL;

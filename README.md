@@ -2,7 +2,7 @@
 
 **Catch a good moment.** Find a rising independent publisher, make a sponsorship that belongs there, and activate it with PayPal Sandbox.
 
-This hackathon MVP implements the full application path. **PayPal Sandbox approval, capture, cancellation, repeated verification and paid-ad measurement have been verified. Live OpenAI generation is still pending account configuration and verification.** The payment check used explicitly labeled manual copy, so it does not establish a complete AI-to-payment demo. Automated provider doubles and labeled browser fixtures are not evidence of a real payment or AI call. See [verification](docs/verification.md).
+SpikeSlot keeps the web studio and PayPal checkout while **your own Codex or Claude Code supplies the AI through MCP**. No server OpenAI key is needed. The agent reads your campaign, saves grounded recommendations and creates unapproved drafts; you edit, approve and pay in the browser. See [MCP setup](docs/mcp.md) and the evidence boundaries in [verification](docs/verification.md).
 
 ## Run locally
 
@@ -20,8 +20,6 @@ Edit `.env.local` locally. Never commit it or paste credentials into an issue:
 | `APP_URL`                                  | Exact browser origin, initially `http://localhost:3610`. Use this URL in the browser, including the port.                                      |
 | `SESSION_SECRET`                           | A random secret of at least 32 characters. Generate one with `node -e "console.log(require('crypto').randomBytes(48).toString('base64url'))"`. |
 | `PGLITE_DIR`                               | Persistent local database directory; default `./data/pglite`.                                                                                  |
-| `OPENAI_API_KEY`                           | Server-only key for your API project.                                                                                                          |
-| `OPENAI_MODEL`                             | A model available to your project that supports Responses API structured outputs. No hidden model fallback.                                    |
 | `PAYPAL_CLIENT_ID`, `PAYPAL_CLIENT_SECRET` | Credentials from a **Sandbox** REST app in the PayPal Developer Dashboard.                                                                     |
 
 ```sh
@@ -30,14 +28,14 @@ pnpm dev
 
 Open **http://localhost:3610**. To run a production build: `pnpm build`, then `pnpm start`. The app binds to loopback by default. Restart your own app server after changing provider credentials. Do not run development and production against the same database at once.
 
-Without provider keys you can explore sample publishers, save a brief and replay traffic. AI and checkout return explicit setup errors; no fixture is substituted.
+Without PayPal credentials you can explore publishers, save a brief, replay traffic and connect your AI. Checkout requires Sandbox credentials. No fixture is substituted for a client-generated result or payment.
 
 ## Try the journey
 
 1. Start a campaign. Review the fictional PetFrame brief, including its example product URL, or provide your own product facts and HTTPS link.
 2. Replay the clearly labeled sample traffic. The reused detector evaluates three publishers.
-3. Select **Find fits with AI**. Each publisher receives a recommendation or abstention, with a quote verified against the supplied profile and a fixed placement.
-4. Create a sponsorship for a recommended publisher. Edit and save the copy, then review the preview.
+3. Select **Create / replace connection key**, connect Codex or Claude Code using the displayed commands, and send the provided request. Your AI assesses all three publishers, with source quotes and placements validated by the server.
+4. Ask your AI to create a draft for a recommended publisher. Results refresh on the campaign page. Open the saved draft, edit and save the copy, then review the preview.
 5. Approve the creative and open PayPal Sandbox. Use a **personal Sandbox buyer account different from the app's merchant account**. The server owns the USD 10 price and 30-minute duration.
 6. Complete Sandbox checkout. The return page verifies and captures the server-owned order. An incomplete, cancelled or mismatched payment cannot activate the ad. If a response is lost, **Verify this order** reconciles the same order.
 7. Open the sample publisher page in the same browser. Scroll to the sponsored slot. At least half of it must be visible in an active tab for one continuous second to count a view. Click the CTA, then inspect the report.
@@ -54,7 +52,7 @@ pnpm lint
 pnpm build
 ```
 
-With an application already running, `pnpm e2e` runs four HTTP integration checks against `http://localhost:3610`. Set `E2E_BASE_URL` for another port. These checks create their own session-isolated campaigns, retain those records and make no external AI or payment calls.
+With an application already running, `pnpm e2e` runs HTTP and MCP integration checks against `http://localhost:3610`. Set `E2E_BASE_URL` for another port. These checks create their own session-isolated campaigns, retain those records and make no external AI or payment calls.
 
 Tests cover the spike detector, signed sessions and same-origin JSON boundaries, grounded AI response validation, snapshot locking, payment amount/currency/ownership checks, cancellation, concurrent retries, lost capture responses, viewability, event deduplication and expiry. They make **no paid external calls**.
 
@@ -62,11 +60,11 @@ For an explicitly seeded visual QA environment, see [browser QA instructions](do
 
 ## Implementation and limits
 
-Next.js / React / TypeScript, Zod input contracts and embedded PostgreSQL via PGlite. Server-side fetch adapters use OpenAI Responses structured outputs and PayPal Orders v2. A signed HttpOnly, SameSite=Lax cookie isolates each demo. Only an exact same-origin JSON POST can mutate data. An approved creative and destination remain fixed, even if the campaign brief changes later.
+Next.js / React / TypeScript, Zod input contracts and embedded PostgreSQL via PGlite. The official MCP TypeScript SDK exposes a stateless Streamable HTTP endpoint; the user’s AI client generates the content. PayPal Orders v2 remains server-side. A signed HttpOnly, SameSite=Lax cookie isolates each demo. Browser mutations require an exact same-origin JSON POST. MCP uses a separate campaign-scoped bearer key, stored only as a hash, expiring after 24 hours and revocable in the browser. An approved creative and destination remain fixed, even if the campaign brief changes later.
 
-This is a **single-process, local judging demo**, not a public multi-tenant marketplace. Sessions last one day. PGlite needs persistent disk and must not be shared by several processes. Do not deploy this as a stateless function or expose unrestricted AI endpoints publicly without adding authentication and a global spend limit. There is no webhook reconciliation, refund handling, fraud-audited reporting, real creator payout, cross-site SDK onboarding, website crawling or outbound email/DM sending.
+This is a **single-process, local judging demo**, not a public multi-tenant marketplace. Sessions last one day. PGlite needs persistent disk and must not be shared by several processes. Do not deploy this as a stateless function or expose it as a public marketplace without adding account authentication, abuse controls and production storage. There is no webhook reconciliation, refund handling, fraud-audited reporting, real creator payout, cross-site SDK onboarding, website crawling or outbound email/DM sending.
 
-One plan represents one demo placement, selected explicitly on the sample publisher URL. It is not a production inventory booking or global ad auction. Traffic is synthetic; the detector, editable snapshot, server payment verification and measurement code are real. AI has no authority over price, duration, payment credentials or destination.
+One plan represents one demo placement, selected explicitly on the sample publisher URL. It is not a production inventory booking or global ad auction. Traffic is synthetic; the detector, editable snapshot, server payment verification and measurement code are real. MCP has no authority over price, duration, payment credentials, destination, approval or capture. Up to eight recommendation/draft saves are allowed per campaign; exact draft retries are idempotent. Client/model labels are self-reported, not attestation.
 
 ## Reuse and submission
 

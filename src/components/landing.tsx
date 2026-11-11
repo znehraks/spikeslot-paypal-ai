@@ -7,13 +7,7 @@ import type { Run } from "@/core/model";
 import { Arrow, PublisherArt, Notice } from "./common";
 import { request } from "./api";
 
-export function Landing({
-  aiReady,
-  paypalReady,
-}: {
-  aiReady: boolean;
-  paypalReady: boolean;
-}) {
+export function Landing({ paypalReady }: { paypalReady: boolean }) {
   const [busy, setBusy] = useState(false),
     [error, setError] = useState("");
   const router = useRouter();
@@ -45,9 +39,7 @@ export function Landing({
             <Arrow />
           </button>
           <div className="integration-state">
-            <span className={aiReady ? "ready" : ""}>
-              {aiReady ? "AI configured" : "AI setup pending"}
-            </span>
+            <span className="ready">Bring your Codex or Claude Code</span>
             <span className={paypalReady ? "ready" : ""}>
               {paypalReady
                 ? "PayPal Sandbox configured"
@@ -121,8 +113,8 @@ export function Landing({
           <li>
             <strong>Find the moment</strong>
             <p>
-              Replay sample traffic through our spike detector. Ask AI where
-              your brand fits—and where it doesn’t.
+              Replay sample traffic through our spike detector. Connect your AI
+              to see where your brand fits—and where it doesn’t.
             </p>
           </li>
           <li>
@@ -143,8 +135,9 @@ export function Landing({
       </section>
       <p className="demo-note">
         This is a hackathon demo with fictional brands and sample publisher
-        experiences. Traffic is simulated; AI and PayPal calls require connected
-        accounts. No real payments or creator payouts.
+        experiences. Traffic is simulated; use your own Codex or Claude Code
+        account for AI and a connected PayPal Sandbox account for test payments.
+        No real payments or creator payouts.
       </p>
     </>
   );

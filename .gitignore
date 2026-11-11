@@ -10,3 +10,5 @@ refs/
 .worktrees/
 *.tsbuildinfo
 .DS_Store
+
+.next-mcp/

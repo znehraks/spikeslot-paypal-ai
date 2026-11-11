@@ -104,7 +104,7 @@ export async function claimAiCall(db: QueryDb, id: string, owner: string) {
   if (!q.rows.length)
     throw new AppError(
       "ai_limit",
-      "This demo run has reached its eight AI calls. Start a new run.",
+      "This demo run has reached its eight saved AI results. Start a new run.",
       429,
     );
 }

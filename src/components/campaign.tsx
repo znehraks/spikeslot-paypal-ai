@@ -1,29 +1,70 @@
 "use client";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { publishers } from "@/core/sites";
 import { effectiveStatus, type Run, type Plan, type Brief } from "@/core/model";
 import { Arrow, PublisherArt, TrafficChart, Notice } from "./common";
 import { request } from "./api";
+import { AgentConnection } from "./agent-connection";
 
-export function Campaign({ initial, plans }: { initial: Run; plans: Plan[] }) {
+export function Campaign({
+  initial,
+  plans: initialPlans,
+}: {
+  initial: Run;
+  plans: Plan[];
+}) {
   const [run, setRun] = useState(initial),
     [brief, setBrief] = useState<Brief>(initial.brief),
     [busy, setBusy] = useState(""),
     [error, setError] = useState("");
-  const router = useRouter();
+  const [plans, setPlans] = useState(initialPlans);
+  const [prompt, setPrompt] = useState(
+    "Use the SpikeSlot MCP tools to read my campaign, assess all three publishers with grounded evidence, save your recommendations, then create one tailored draft for the best fit. Explain skipped publishers. Return the draft review link. Do not approve or pay.",
+  );
   const dirty = JSON.stringify(brief) !== JSON.stringify(run.brief);
+  useEffect(() => {
+    if (dirty || busy) return;
+    let cancelled = false;
+    const timer = setInterval(async () => {
+      try {
+        const result = await request<{ run: Run; plans: Plan[] }>(
+          `/api/runs/${initial.id}`,
+        );
+        if (!cancelled) {
+          setRun(result.run);
+          setPlans(result.plans);
+        }
+      } catch {
+        /* Manual refresh still reports connection errors. */
+      }
+    }, 5000);
+    return () => {
+      cancelled = true;
+      clearInterval(timer);
+    };
+  }, [dirty, busy, initial.id]);
+  async function refresh() {
+    setBusy("refresh");
+    setError("");
+    try {
+      const result = await request<{ run: Run; plans: Plan[] }>(
+        `/api/runs/${run.id}`,
+      );
+      setRun(result.run);
+      setPlans(result.plans);
+    } catch (e) {
+      setError((e as Error).message);
+    } finally {
+      setBusy("");
+    }
+  }
   async function action(name: string, input: unknown = {}) {
     setBusy(name);
     setError("");
     try {
-      const result = await request<Run | Plan>(
-        `/api/runs/${run.id}/${name}`,
-        input,
-      );
-      if (name === "generate") router.push(`/studio/${result.id}`);
-      else setRun(result as Run);
+      const result = await request<Run>(`/api/runs/${run.id}/${name}`, input);
+      setRun(result);
     } catch (e) {
       setError((e as Error).message);
     } finally {
@@ -144,7 +185,7 @@ export function Campaign({ initial, plans }: { initial: Run; plans: Plan[] }) {
           </strong>
           <p>
             {run.analysis
-              ? `AI analysis · ${run.model}`
+              ? `Your AI · ${run.model}`
               : "90 minutes of sample visits, processed by the real spike detector."}
           </p>
         </div>
@@ -162,10 +203,10 @@ export function Campaign({ initial, plans }: { initial: Run; plans: Plan[] }) {
           </button>
           <button
             className="button"
-            disabled={!!busy || !run.traffic || dirty}
-            onClick={() => action("analyze")}
+            disabled={!!busy || dirty}
+            onClick={refresh}
           >
-            {busy === "analyze" ? "Finding the fit…" : "Find fits with AI"}
+            {busy === "refresh" ? "Refreshing…" : "Refresh AI results"}
             <Arrow />
           </button>
         </div>
@@ -175,6 +216,11 @@ export function Campaign({ initial, plans }: { initial: Run; plans: Plan[] }) {
       <div className="sr-only" role="status">
         {busy ? "Working. Please wait." : "Ready."}
       </div>
+      <AgentConnection
+        runId={run.id}
+        prompt={prompt}
+        disabled={dirty || !run.traffic}
+      />
       <section className="discover">
         <div className="section-heading">
           <h2>Your publisher shortlist</h2>
@@ -232,11 +278,16 @@ export function Campaign({ initial, plans }: { initial: Run; plans: Plan[] }) {
                   <button
                     className="button secondary full"
                     disabled={!!busy || dirty}
-                    onClick={() => action("generate", { siteId: site.id })}
+                    onClick={() => {
+                      setPrompt(
+                        `Use SpikeSlot get_campaign to read the latest brief and recommendations. Generate tailored copy for ${site.name} (${site.id}) and save it with create_draft. Return the review link. Do not approve or pay.`,
+                      );
+                      document
+                        .getElementById("connect-ai")
+                        ?.scrollIntoView({ behavior: "smooth" });
+                    }}
                   >
-                    {busy === "generate"
-                      ? "Creating a draft…"
-                      : "Make a sponsorship"}
+                    Ask your AI for a draft
                     <Arrow />
                   </button>
                 )}

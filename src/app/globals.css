@@ -1378,3 +1378,52 @@ dd > a {
     scroll-behavior: auto !important;
   }
 }
+
+.agent-connection {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 32px 0;
+  margin: 28px 0 44px;
+  scroll-margin-top: 24px;
+}
+.agent-connection > p {
+  margin: 16px 0;
+}
+.agent-connection .actions {
+  margin: 22px 0;
+  flex-wrap: wrap;
+}
+.connection-steps {
+  max-width: 860px;
+  margin: 24px 0;
+  display: grid;
+  gap: 14px;
+}
+.connection-steps label {
+  display: grid;
+  gap: 10px;
+}
+.connection-steps select {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+  padding: 12px;
+  max-width: 280px;
+}
+.connection-steps .button {
+  justify-self: start;
+}
+.connection-steps pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: var(--surface);
+  padding: 18px;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+.connection-steps summary {
+  cursor: pointer;
+  padding: 12px 0;
+}

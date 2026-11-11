@@ -1,5 +1,15 @@
 # Verification — November 11, 2026
 
+## MCP conversion checkpoint
+
+The application now uses the advertiser’s own Codex or Claude Code through MCP instead of server-side OpenAI calls. Previous OpenAI setup findings below are historical.
+
+- 60 unit/protocol tests passed, including the official MCP client round-trip, token scoping/rotation/expiry/revocation, stale version rejection, grounded evidence, strict inputs, draft retry idempotency and unchanged PayPal regression coverage.
+- Typecheck, lint and production build passed. The QA build uses `SPIKESLOT_BUILD_DIR=.next-mcp` to preserve the previous server’s build.
+- Five HTTP integration tests passed against localhost:3614, including an actual MCP HTTP client writing results that are then read through the browser API. A bearer key cannot authorize browser checkout.
+- Actual-client model generation and current browser/payment verification are being checked separately; automated fixture copy is not model-generation evidence.
+
+
 ## Automated checks
 
 - `pnpm test`: **58 tests passed**, five files, last run 22:40 KST. Includes reused spike regression tests plus new payment, AI contract, HTTP trust-boundary and browser viewability tests.
@@ -42,7 +52,7 @@ Provider order/capture references and assertion results are retained in ignored 
 
 ## Still required before claiming an end-to-end submission demo
 
-1. Configure and authenticate an OpenAI API project/model. Run actual fit analysis and creative generation, inspect copy quality and grounding.
+1. Connect the advertiser’s Codex or Claude Code via MCP. Run actual fit analysis and creative generation, inspect copy quality and grounding.
 2. Repeat the complete AI-to-PayPal journey using actual generated and reviewed copy. The independent Sandbox payment path above passed.
 3. Inspect natural expiry of the paid placement. Automated expiry tests and fixture browser expiry already pass; paid placement/report checks above also passed.
 4. Review the visual direction, final English copy, and recorded demo. Publish the video and submit to Devpost only after their own checks.
