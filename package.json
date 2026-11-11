@@ -2,10 +2,11 @@
   "name": "spikeslot-paypal-ai",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --hostname 127.0.0.1 --port 3610",
     "build": "next build",
-    "start": "next start --port 3610",
+    "start": "next start --hostname 127.0.0.1 --port 3610",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "test": "vitest run",

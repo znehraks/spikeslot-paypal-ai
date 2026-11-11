@@ -1,8 +1,54 @@
 import type { SiteId } from "./model";
-export interface Publisher {id:SiteId;name:string;tagline:string;description:string;flow:string;placement:string;tone:string;accent:string;image:string}
-export const publishers:Publisher[] = [
-{id:"royal-pets",name:"Royal Pets",tagline:"A little royalty. A lot of personality.",description:"A pet portrait experience. People choose a royal portrait style for their pet and reach a finished portrait they can save or share.",flow:"Choose portrait style → view finished pet portrait → download or share the image.",placement:"Below the finished portrait, after the save button. Never block the download.",tone:"Playful, affectionate, slightly theatrical.",accent:"#fa713e",image:"/art/royal-pet.svg"},
-{id:"pet-collage",name:"Growing Together",tagline:"Their little moments, all in one place.",description:"A photo collage tool. People arrange photos from different ages of their pet into one finished keepsake image.",flow:"Choose pet photos → arrange a collage → save the finished collage.",placement:"Below the completed collage preview, after the save action.",tone:"Warm, thoughtful, nostalgic.",accent:"#b5c999",image:"/art/pet-collage.svg"},
-{id:"pet-names",name:"Name That Floof",tagline:"Big personality. Tiny name.",description:"A playful pet-name finder. People choose a personality and receive a text list of names. It does not make or accept photos.",flow:"Choose a personality → receive name suggestions → copy a name.",placement:"Below the text results. No photo output exists.",tone:"Light, witty, curious.",accent:"#d9bad6",image:"/art/pet-names.svg"},
+export interface Publisher {
+  id: SiteId;
+  name: string;
+  tagline: string;
+  description: string;
+  flow: string;
+  placement: string;
+  tone: string;
+  accent: string;
+  image: string;
+}
+export const publishers: Publisher[] = [
+  {
+    id: "royal-pets",
+    name: "Royal Pets",
+    tagline: "A little royalty. A lot of personality.",
+    description:
+      "A pet portrait experience. People choose a royal portrait style for their pet and reach a finished portrait they can save or share.",
+    flow: "Choose portrait style → view finished pet portrait → download or share the image.",
+    placement:
+      "Below the finished portrait, after the save button. Never block the download.",
+    tone: "Playful, affectionate, slightly theatrical.",
+    accent: "#fa713e",
+    image: "/art/royal-pet.svg",
+  },
+  {
+    id: "pet-collage",
+    name: "Growing Together",
+    tagline: "Their little moments, all in one place.",
+    description:
+      "A photo collage tool. People arrange photos from different ages of their pet into one finished keepsake image.",
+    flow: "Choose pet photos → arrange a collage → save the finished collage.",
+    placement: "Below the completed collage preview, after the save action.",
+    tone: "Warm, thoughtful, nostalgic.",
+    accent: "#b5c999",
+    image: "/art/pet-collage.svg",
+  },
+  {
+    id: "pet-names",
+    name: "Name That Floof",
+    tagline: "Big personality. Tiny name.",
+    description:
+      "A playful pet-name finder. People choose a personality and receive a text list of names. It does not make or accept photos.",
+    flow: "Choose a personality → receive name suggestions → copy a name.",
+    placement: "Below the text results. No photo output exists.",
+    tone: "Light, witty, curious.",
+    accent: "#d9bad6",
+    image: "/art/pet-names.svg",
+  },
 ];
-export function publisher(id:SiteId){return publishers.find(s=>s.id===id)!;}
+export function publisher(id: SiteId) {
+  return publishers.find((s) => s.id === id)!;
+}
