@@ -1,6 +1,6 @@
-# SpikeSlot — English submission draft
+# SpikeSlot — English submission
 
-Status: [English narrated video published](https://youtu.be/dIh_5OglSUo); [Devpost project prepared](https://devpost.com/software/spikeslot), with final contest submission pending the submitter's required attestations and survey answers. Actual Codex and Claude Code generation, Sandbox payment, cancellation, measurement and expiry checks are detailed in [verification.md](verification.md). The public hosted journey was verified separately.
+Status: [English narrated video published](https://youtu.be/dIh_5OglSUo) and [Devpost project submitted](https://devpost.com/software/spikeslot). The success receipt and persisted Submitted status for submission `1296196` were verified on November 12, 2026 at 02:01 KST. Actual Codex and Claude Code generation, Sandbox payment, cancellation, measurement and expiry checks are detailed in [verification.md](verification.md). The public hosted journey was verified separately.
 
 ## Tagline
 
@@ -41,7 +41,7 @@ The original author-owned SpikeSlot project supplied its traffic spike state mac
 | 1:25–2:01 | Fixed terms, actual Sandbox checkout and capture receipt | USD 10 for 30 minutes; only a server-verified completed capture activates the saved creative. |
 | 2:01–2:26 | Publisher placement and report | The ad appears below the normal save action; the report shows 1 view / 1 click. |
 
-The recording uses actual local browser frames, English captions and synthetic English narration. Login and generation waiting are omitted. A companion SRT and original voiceover are available with the local MP4; no fixture output appears in the recording. The hosted journey was verified separately. Public YouTube playback at 1080p and anonymous oEmbed access were verified; final Devpost submission remains pending.
+The recording uses actual local browser frames, English captions and synthetic English narration. Login and generation waiting are omitted. A companion SRT and original voiceover are available with the local MP4; no fixture output appears in the recording. The hosted journey was verified separately. Public YouTube playback at 1080p, anonymous oEmbed access and final Devpost submission were verified.
 
 ## Integration references
 

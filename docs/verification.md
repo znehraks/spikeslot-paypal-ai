@@ -1,12 +1,14 @@
 # Verification — November 11–12, 2026
 
-## Public video and Devpost draft — November 12 KST
+## Public video and completed Devpost submission — November 12 KST
 
 The user authorized YouTube publication and final Devpost submission, then selected their personal channel. The narrated video was published as **Public** on the channel 유정민: https://youtu.be/dIh_5OglSUo. YouTube reported its checks complete with no issues found and displayed the published-video receipt. The watch page played at 1920×1080 with no media error; its transcoded duration was 145.561 seconds. An unauthenticated oEmbed request returned HTTP 200 with the matching title, channel and embed URL. This is publication/playback evidence, not a claim of direct listening or physical-device review.
 
-After the user completed the required reCAPTCHA, Devpost created submission `1296196`, project https://devpost.com/software/spikeslot. The saved project includes the English story, explicit source reuse disclosure, public video, hosted demo, exact GitHub branch, a screenshot thumbnail and two captioned screenshots. The preview displays the YouTube embed and correct links. Empty default story headings were removed before the final preview check. Additional factual fields and private Sandbox judging instructions are prepared; required personal attestations and survey answers are awaiting the submitter. **Final contest submission has not yet been performed.**
+After the user completed the required reCAPTCHA, Devpost created submission `1296196`, project https://devpost.com/software/spikeslot. The saved project includes the English story, explicit source reuse disclosure, public video, hosted demo, exact GitHub branch, a screenshot thumbnail and two captioned screenshots. The preview displays the YouTube embed and correct links. Empty default story headings were removed before the final preview check.
 
-Publication and preview screenshots are retained locally under ignored `refs/`. Sandbox credentials remain outside the public repository and public story. The narration tooling checkpoint `e51bd5baceef2c32c24c4ace8e7035dfa20a247c` was pushed to `origin/feat/hackathon` and the remote SHA matched local HEAD. No application code or hosted deployment changed for this publication checkpoint.
+The user supplied the required eligibility attestations and personal survey answers. Those answers, the Render sponsor selection, repository/demo links and private Sandbox judging instructions were saved and read back before submission. After accepting the contest terms within the authorized submission flow, the page displayed **Project submitted!** and **Submitted to — PayPal AI Hackathon**. A fresh visit to My hackathon projects independently displayed **SUBMITTED — SpikeSlot**. Receipt verification completed November 12, 2026 at 02:01 KST. This confirms contest submission, not judging acceptance or an award. The displayed edit deadline is November 13 at 05:00 KST.
+
+Publication, preview and receipt screenshots are retained locally under ignored `refs/`, including `devpost-submitted-20261112.png` and `devpost-submission-list-20261112.png`. Sandbox credentials remain outside the public repository and public story. Narration checkpoint `e51bd5baceef2c32c24c4ace8e7035dfa20a247c` and public-video checkpoint `d8f3a8a6423e551c69c055a048593f828faa3efa` were pushed to `origin/feat/hackathon` with remote SHA matches. No application code or hosted deployment changed for these publication/submission records.
 
 ## English narration and submission preparation — November 12 KST
 
@@ -16,7 +18,7 @@ Twelve English voice clips were generated with the Grady preset using ElevenLabs
 
 Full video/audio decoding passed. Audio duration is 145.533 seconds, integrated loudness is -16.62 LUFS and true peak is -1.49 dBTP. All 12 actual speech windows extracted from the final MP4 matched the script with local Whisper transcription after punctuation, case and number normalization. Whole-track ASR hallucinated text in long silent gaps, so it was not used as speech evidence. Direct listening and physical-device review are not claimed.
 
-Latest MP4 SHA-256: `a62977c7f86316a100e583c388088025825dcaafd628d81033420f648669b93e`. Detailed checks and source stems are ignored local files under the v05 directory. YouTube upload to the user-selected personal channel has started as a private draft; publication is not yet verified. Devpost participant registration succeeded; project creation currently requires a human reCAPTCHA. Final contest submission is not yet complete.
+Latest MP4 SHA-256: `a62977c7f86316a100e583c388088025825dcaafd628d81033420f648669b93e`. Detailed checks and source stems are ignored local files under the v05 directory. At this preparation checkpoint, YouTube was a private draft and Devpost project creation required a human reCAPTCHA. Their later publication and submission results are recorded above.
 
 ## Hosted release and recorded demo — November 12 KST
 
