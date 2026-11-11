@@ -1,0 +1,74 @@
+[
+  {
+    "id": "01-moment",
+    "start": 0.0,
+    "end": 10.033,
+    "text": "A small website gets a sudden wave of attention. A small brand needs the right moment."
+  },
+  {
+    "id": "02-brief",
+    "start": 10.033,
+    "end": 21.1,
+    "text": "Start with the advertiser's facts and approved benefits. PetFrame and the three publishers are fictional demo examples."
+  },
+  {
+    "id": "03-traffic",
+    "start": 21.1,
+    "end": 32.167,
+    "text": "Replay labeled sample traffic through the real spike detector. A traffic spike is a signal—not yet a recommendation."
+  },
+  {
+    "id": "04-connect",
+    "start": 32.167,
+    "end": 44.233,
+    "text": "Connect your own Codex or Claude Code through M C P. The agent can recommend and draft. Approval and payment stay with you."
+  },
+  {
+    "id": "05-fit",
+    "start": 44.233,
+    "end": 62.3,
+    "text": "The connected A I explains the fit and cites publisher facts. It can reject a popular site when the visitor's task does not match."
+  },
+  {
+    "id": "06-draft",
+    "start": 62.3,
+    "end": 73.333,
+    "text": "Open the A I-generated sponsorship in the web studio. Preview it in the publisher's actual placement context."
+  },
+  {
+    "id": "07-edit",
+    "start": 73.333,
+    "end": 85.4,
+    "text": "Edit the headline and save your version. The advertiser decides which creative is approved."
+  },
+  {
+    "id": "08-terms",
+    "start": 85.4,
+    "end": 95.4,
+    "text": "One placement: ten U.S. dollars for thirty minutes. PayPal Sandbox only. No real money moves."
+  },
+  {
+    "id": "09-paypal",
+    "start": 95.4,
+    "end": 111.467,
+    "text": "Complete an actual PayPal Sandbox checkout. The server verifies the order, amount, currency and completed capture."
+  },
+  {
+    "id": "10-receipt",
+    "start": 111.467,
+    "end": 121.467,
+    "text": "A verified capture activates the approved snapshot. The creative and destination are now fixed."
+  },
+  {
+    "id": "11-publisher",
+    "start": 121.467,
+    "end": 133.467,
+    "text": "The sponsorship appears below the normal save action. The stored creative is served without another A I call."
+  },
+  {
+    "id": "12-report",
+    "start": 133.467,
+    "end": 145.53300000000002,
+    "text": "Viewable impressions and clicks update in the report. The placement stops at expiry. Creator payouts are outside this demo."
+  }
+]

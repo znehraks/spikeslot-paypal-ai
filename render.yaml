@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: spikeslot-paypal-ai
+    runtime: node
+    region: singapore
+    plan: 1c-2g
+    branch: feat/hackathon
+    autoDeployTrigger: off
+    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm build
+    startCommand: pnpm exec next start --hostname 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    numInstances: 1
+    disk:
+      name: spikeslot-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: PGLITE_DIR
+        value: /var/data/pglite
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: PAYPAL_CLIENT_ID
+        sync: false
+      - key: PAYPAL_CLIENT_SECRET
+        sync: false

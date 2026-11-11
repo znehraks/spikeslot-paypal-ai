@@ -1,0 +1,14 @@
+[
+  {"id":"01-moment","seconds":10,"caption":"A small website gets a sudden wave of attention.\nA small brand needs the right moment."},
+  {"id":"02-brief","seconds":11,"caption":"Start with the advertiser's facts and approved benefits.\nPetFrame and the three publishers are fictional demo examples."},
+  {"id":"03-traffic","seconds":11,"caption":"Replay labeled sample traffic through the real spike detector.\nA traffic spike is a signal—not yet a recommendation."},
+  {"id":"04-connect","seconds":12,"caption":"Connect your own Codex or Claude Code through MCP.\nThe agent can recommend and draft. Approval and payment stay with you."},
+  {"id":"05-fit","seconds":18,"caption":"The connected AI explains the fit and cites publisher facts.\nIt can reject a popular site when the visitor's task does not match."},
+  {"id":"06-draft","seconds":11,"caption":"Open the AI-generated sponsorship in the web studio.\nPreview it in the publisher's actual placement context."},
+  {"id":"07-edit","seconds":12,"caption":"Edit the headline and save your version.\nThe advertiser decides which creative is approved."},
+  {"id":"08-terms","seconds":10,"caption":"One placement: $10 USD for 30 minutes.\nPayPal Sandbox only. No real money moves."},
+  {"id":"09-paypal","seconds":16,"caption":"Complete an actual PayPal Sandbox checkout.\nThe server verifies the order, amount, currency and completed capture."},
+  {"id":"10-receipt","seconds":10,"caption":"A verified capture activates the approved snapshot.\nThe creative and destination are now fixed."},
+  {"id":"11-publisher","seconds":12,"caption":"The sponsorship appears below the normal save action.\nThe stored creative is served without another AI call."},
+  {"id":"12-report","seconds":12,"caption":"Viewable impressions and clicks update in the report.\nThe placement stops at expiry. Creator payouts are outside this demo."}
+]
