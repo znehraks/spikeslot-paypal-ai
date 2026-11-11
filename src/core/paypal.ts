@@ -35,7 +35,9 @@ export interface PaymentProvider {
 }
 const base = "https://api-m.sandbox.paypal.com";
 export function appOrigin() {
-  const url = new URL(process.env.APP_URL || "http://localhost:3610");
+  const url = new URL(
+    process.env.APP_URL || process.env.RENDER_EXTERNAL_URL || "http://localhost:3610",
+  );
   if (
     url.protocol !== "https:" &&
     !(
