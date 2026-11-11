@@ -2,7 +2,7 @@
 
 **Catch a good moment.** Find a rising independent publisher, make a sponsorship that belongs there, and activate it with PayPal Sandbox.
 
-SpikeSlot keeps the web studio and PayPal checkout while **your own Codex or Claude Code supplies the AI through MCP**. No server OpenAI key is needed. The agent reads your campaign, saves grounded recommendations and creates unapproved drafts; you edit, approve and pay in the browser. See [MCP setup](docs/mcp.md) and the evidence boundaries in [verification](docs/verification.md).
+SpikeSlot keeps the web studio and PayPal checkout while **your own Codex or Claude Code supplies the AI through MCP**. No server OpenAI key is needed. The agent reads your campaign, saves grounded recommendations and creates unapproved drafts; you edit, approve and pay in the browser. Real Codex and Claude Code generation, plus a Codex-generated draft’s PayPal Sandbox checkout and ad measurement, have been verified. See [MCP setup](docs/mcp.md) and the evidence boundaries in [verification](docs/verification.md).
 
 ## Run locally
 

@@ -40,10 +40,11 @@ export function AgentConnection({
     }
   }
   const name = `spikeslot-${runId.slice(0, 8)}`;
+  const tokenEnv = `SPIKESLOT_MCP_TOKEN_${runId.slice(0, 8).toUpperCase()}`;
   const command = connection
     ? client === "codex"
-      ? `export SPIKESLOT_MCP_TOKEN='${connection.token}'
-codex mcp add ${name} --url '${connection.url}' --bearer-token-env-var SPIKESLOT_MCP_TOKEN
+      ? `export ${tokenEnv}='${connection.token}'
+codex mcp add ${name} --url '${connection.url}' --bearer-token-env-var ${tokenEnv}
 codex`
       : `claude mcp add --transport http --scope local ${name} '${connection.url}' --header 'Authorization: Bearer ${connection.token}'
 claude`

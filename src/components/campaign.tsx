@@ -20,7 +20,7 @@ export function Campaign({
     [error, setError] = useState("");
   const [plans, setPlans] = useState(initialPlans);
   const [prompt, setPrompt] = useState(
-    "Use the SpikeSlot MCP tools to read my campaign, assess all three publishers with grounded evidence, save your recommendations, then create one tailored draft for the best fit. Explain skipped publishers. Return the draft review link. Do not approve or pay.",
+    `Use the spikeslot-${initial.id.slice(0, 8)} MCP tools to read my campaign, assess all three publishers with grounded evidence, save your recommendations, then create one tailored draft for the best fit. Explain skipped publishers. Return the draft review link. Do not approve or pay.`,
   );
   const dirty = JSON.stringify(brief) !== JSON.stringify(run.brief);
   useEffect(() => {
@@ -280,7 +280,7 @@ export function Campaign({
                     disabled={!!busy || dirty}
                     onClick={() => {
                       setPrompt(
-                        `Use SpikeSlot get_campaign to read the latest brief and recommendations. Generate tailored copy for ${site.name} (${site.id}) and save it with create_draft. Return the review link. Do not approve or pay.`,
+                        `Use spikeslot-${run.id.slice(0, 8)} get_campaign to read the latest brief and recommendations. Generate tailored copy for ${site.name} (${site.id}) and save it with create_draft. Return the review link. Do not approve or pay.`,
                       );
                       document
                         .getElementById("connect-ai")

@@ -14,7 +14,7 @@ SpikeSlot exposes Streamable HTTP MCP at `APP_URL/api/mcp`. Your Codex or Claude
 
 ## Codex CLI
 
-Replace the example values with the campaign panel’s values. Use its unique server name if connecting multiple campaigns.
+Replace the example values with the campaign panel’s values. Use the panel’s unique server name and token environment variable for each campaign. Sharing one token environment variable across multiple configured servers would point them all at the same campaign.
 
 ```sh
 export SPIKESLOT_MCP_TOKEN='YOUR_CAMPAIGN_KEY'

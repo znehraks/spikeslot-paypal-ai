@@ -1,6 +1,6 @@
 # SpikeSlot — English submission draft
 
-Status: implementation draft. Real PayPal Sandbox approval/capture, cancellation and paid-ad measurement passed with labeled manual copy. Complete real AI generation and repeat the full journey before recording or submitting. Do not present browser fixtures or manual copy as live AI output.
+Status: submission text draft. Real Codex and Claude Code MCP generation passed. The Codex-generated draft completed browser review, actual PayPal Sandbox approval/capture and paid-ad measurement (1 view / 1 click). Earlier cancellation and natural paid-ad expiry checks also passed. Review and record the connected journey before publishing or submitting. See verification.md for precise scope.
 
 ## Tagline
 
