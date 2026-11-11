@@ -1,5 +1,15 @@
 # Verification — November 11–12, 2026
 
+## English narration and submission preparation — November 12 KST
+
+The latest local video is `refs/demo-20261112-v05-narrated/SpikeSlot-demo-English-narrated.mp4`: 145.533 seconds, 1920×1080 / 30fps, English burned captions and a 48 kHz AAC narration track. The original silent video is preserved. The video packet SHA-256 is unchanged, so adding narration did not alter the recorded UI or captions.
+
+Twelve English voice clips were generated with the Grady preset using ElevenLabs through Higgsfield (`text2speech_v2`, `variant=elevenlabs`). The observed credit balance decreased by 4.8. Original MP3 clips and the assembled WAV are retained separately. `docs/demo-narration.json` maps each spoken passage to the existing caption timeline; `scripts/add-demo-narration.py` normalizes and aligns the clips, refuses overwrites, and checks each segment and final audio duration. An initial timestamp-based mix failed the audio-duration check; the final assembly uses sample counts and reset timestamps.
+
+Full video/audio decoding passed. Audio duration is 145.533 seconds, integrated loudness is -16.62 LUFS and true peak is -1.49 dBTP. All 12 actual speech windows extracted from the final MP4 matched the script with local Whisper transcription after punctuation, case and number normalization. Whole-track ASR hallucinated text in long silent gaps, so it was not used as speech evidence. Direct listening and physical-device review are not claimed.
+
+Latest MP4 SHA-256: `a62977c7f86316a100e583c388088025825dcaafd628d81033420f648669b93e`. Detailed checks and source stems are ignored local files under the v05 directory. YouTube upload to the user-selected personal channel has started as a private draft; publication is not yet verified. Devpost participant registration succeeded; project creation currently requires a human reCAPTCHA. Final contest submission is not yet complete.
+
 ## Hosted release and recorded demo — November 12 KST
 
 [Hosted Sandbox demo](https://spikeslot-paypal-ai.onrender.com). Render deployed commit `6108d5a97a3193ed3303a8b5eef2dbf5665ace0b` as `dep-dbq95nd6e07s73fffjd0`, using one 1 CPU / 2 GB instance and a 1 GB persistent disk. The first 512 MB attempt failed during database initialization. The larger plan was explicitly approved; its observed base price is USD 25.25/month including disk. A USD 50 hackathon credit was applied, but credits do not cap future charges.

@@ -41,7 +41,7 @@ The original author-owned SpikeSlot project supplied its traffic spike state mac
 | 1:25–2:01 | Fixed terms, actual Sandbox checkout and capture receipt | USD 10 for 30 minutes; only a server-verified completed capture activates the saved creative. |
 | 2:01–2:26 | Publisher placement and report | The ad appears below the normal save action; the report shows 1 view / 1 click. |
 
-The recording uses actual local browser frames, English captions and no audio. Login and generation waiting are omitted. A companion SRT is available with the local MP4; no fixture output appears in the recording. The hosted journey was verified separately. Review the video, then verify its published URL and the final Devpost fields before submission.
+The recording uses actual local browser frames, English captions and synthetic English narration. Login and generation waiting are omitted. A companion SRT and original voiceover are available with the local MP4; no fixture output appears in the recording. The hosted journey was verified separately. Verify the published video URL and final Devpost fields before submission.
 
 ## Integration references
 

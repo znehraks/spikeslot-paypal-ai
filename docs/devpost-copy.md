@@ -60,4 +60,4 @@ PayPal Orders v2, Model Context Protocol, Codex, Claude Code, Next.js, React, Ty
 
 The demo brand and publishers are fictional. Traffic is simulated; the detector and payment/serving flow are real. The default product destination is an explicitly documented example URL. Use a PayPal **personal Sandbox buyer**, never a live account. AI client/model labels are self-reported. No conversion-lift or fraud-audited measurement claim is made.
 
-The hosted demo is available. A 2-minute-26-second English-captioned recording has been prepared locally and still needs final review and a publicly visible YouTube URL. This copy does not itself upload the video or submit the project.
+The hosted demo is available. A 2-minute-26-second recording with English captions and synthetic English narration has been prepared. Its YouTube upload and final Devpost submission are in progress; this draft does not establish publication or receipt.
