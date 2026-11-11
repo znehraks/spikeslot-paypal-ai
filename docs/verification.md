@@ -1,6 +1,22 @@
-# Verification — November 11, 2026
+# Verification — November 11–12, 2026
 
-## Current MCP implementation and real-client verification
+## Hosted release and recorded demo — November 12 KST
+
+[Hosted Sandbox demo](https://spikeslot-paypal-ai.onrender.com). Render deployed commit `6108d5a97a3193ed3303a8b5eef2dbf5665ace0b` as `dep-dbq95nd6e07s73fffjd0`, using one 1 CPU / 2 GB instance and a 1 GB persistent disk. The first 512 MB attempt failed during database initialization. The larger plan was explicitly approved; its observed base price is USD 25.25/month including disk. A USD 50 hackathon credit was applied, but credits do not cap future charges.
+
+- Public HTTPS and database health passed. The hosted campaign cookie is Secure, HttpOnly and SameSite=Lax. Anonymous MCP returned 401; a foreign-origin mutation returned 403.
+- All **five HTTP/MCP integration tests passed against the public URL**, including cross-session isolation and rejection of bearer-key browser checkout. These tests use labeled fixture drafts and make no AI or payment-provider calls.
+- Separately, a real Codex CLI client connected to the public MCP URL, assessed all three publishers and saved a Royal Pets draft. The browser displayed the result, saved an advertiser headline edit, and completed an actual PayPal Sandbox checkout.
+- The hosted server activated the approved snapshot. An independent PayPal Orders GET confirmed `COMPLETED`, USD 10.00, matching plan/order/capture and `final_capture: true`. The actual publisher page and report recorded **1 view / 1 click**. The QA MCP key was revoked and returned 401 afterward.
+- A 390px hosted studio check passed without horizontal overflow. Desktop placement and report screenshots were inspected. Physical-device testing is not claimed.
+- Controlled redeploy `dep-dbq99huc6qcc739iqofg` of the same commit succeeded. The campaign and all recommendations remained accessible with the existing session. The approved plan, creative, PayPal receipt and 1 view / 1 click counters matched the saved pre-deploy response exactly; database health returned 200.
+- The preceding application release passed 61 unit/protocol tests, typecheck, lint and production build. This release changes hosting configuration and recording tooling; no application logic was changed to resolve the memory limit.
+
+The actual demo recording is **145.533 seconds, 1920×1080, H.264, 30fps**, with burned English captions and a companion SRT; there is no audio track. It shows real local Codex generation results, advertiser editing, Sandbox checkout, placement and 1 view / 1 click. Login and generation waiting are omitted. It was recorded on localhost:3616; the hosted journey above was verified separately using the same application logic. No fixtures were used in the video. Full ffmpeg decoding passed; start/middle/end frames for all 12 scenes and four final captioned frames were inspected.
+
+Local review file: `refs/demo-20261112-v02/SpikeSlot-demo-English.mp4`. SHA-256: `1a87224d1412df88d1d74bedeb5ab27b2bc15f1ac9485ba5d7bbecbf713c1591`. Capture sources, client logs and provider evidence remain private ignored files under `refs/`; they have not been publicly uploaded or remotely backed up by this commit.
+
+## MCP implementation and real-client verification — November 11
 
 The application now uses the advertiser’s own Codex or Claude Code through MCP instead of server-side OpenAI calls. Earlier OpenAI setup findings below are historical. No server AI key is needed.
 
@@ -60,4 +76,4 @@ Provider order/capture references and assertion results are retained in ignored 
 
 ## Remaining release / submission steps
 
-The real client-to-payment demo path is verified. Review the final visual/copy choices and record the actual connected journey before publication. Validate the hosted app/video URLs and Devpost fields separately. The current application is local; no public deployment, creator payout, outbound message, demo-video publication or Devpost submission has been performed. These publication steps are outside this implementation task.
+The hosted application and local captioned recording are ready for final review. A publicly accessible video URL and the final Devpost fields remain to be completed. No creator payout, outbound message, video upload or Devpost submission has been performed. Browser emulation does not establish physical-device playback.

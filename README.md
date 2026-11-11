@@ -4,6 +4,8 @@
 
 SpikeSlot keeps the web studio and PayPal checkout while **your own Codex or Claude Code supplies the AI through MCP**. No server OpenAI key is needed. The agent reads your campaign, saves grounded recommendations and creates unapproved drafts; you edit, approve and pay in the browser. Real Codex and Claude Code generation, plus a Codex-generated draft’s PayPal Sandbox checkout and ad measurement, have been verified. See [MCP setup](docs/mcp.md) and the evidence boundaries in [verification](docs/verification.md).
 
+**[Open the hosted Sandbox demo](https://spikeslot-paypal-ai.onrender.com).** Use your own Codex or Claude Code and a PayPal personal Sandbox buyer. The brand, publishers and traffic are labeled examples; no real payment or creator payout occurs.
+
 ## Run locally
 
 Requirements: Node.js 22 or newer, pnpm 10, a writable local disk. Use one application process per database directory.

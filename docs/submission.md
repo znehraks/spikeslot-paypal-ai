@@ -1,6 +1,6 @@
 # SpikeSlot — English submission draft
 
-Status: submission text draft. Real Codex and Claude Code MCP generation passed. The Codex-generated draft completed browser review, actual PayPal Sandbox approval/capture and paid-ad measurement (1 view / 1 click). Earlier cancellation and natural paid-ad expiry checks also passed. Review and record the connected journey before publishing or submitting. See verification.md for precise scope.
+Status: submission text draft. The hosted demo and a local 2-minute-26-second English-captioned video are prepared. Actual Codex and Claude Code generation, Sandbox payment, cancellation, measurement and expiry checks are detailed in [verification.md](verification.md). The public hosted journey was also verified separately. Final video review, upload and Devpost submission are pending.
 
 ## Tagline
 
@@ -31,18 +31,17 @@ The original author-owned SpikeSlot project supplied its traffic spike state mac
 - Viewability is a local browser measurement, not a fraud-audited billing guarantee.
 - AI copy needs human review; there is no claim of improved conversion.
 
-## Recording outline — approximately 2 minutes 40 seconds
+## Recorded demo — 2 minutes 26 seconds
 
-| Time      | Show                                                                | Explain                                                                                                                                     |
-| --------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0:00–0:20 | Campaign brief and sample publisher pool                            | A brand wants to meet people at a useful moment. Publishers have already opted in.                                                          |
-| 0:20–0:45 | Replay traffic; connect own AI over MCP; save recommendations       | Traffic is simulated. The detector is real. Point out the popular but excluded name finder.                                                 |
-| 0:45–1:15 | Generate a real draft; edit and save its headline                   | The sponsorship uses the actual result-screen context. A person approves the final copy.                                                    |
-| 1:15–1:55 | Approve, complete actual PayPal Sandbox checkout, return to receipt | The server checks the completed capture and activates that exact snapshot. Show the Sandbox order/capture evidence, avoiding personal data. |
-| 1:55–2:25 | Open publisher page, reveal sponsored slot, click, return to report | The ad is below the normal save action. Viewability and click counts update once.                                                           |
-| 2:25–2:40 | Closing screen                                                      | Contextual fit, human approval and a verified transaction make the placement useful and accountable.                                        |
+| Time | Show | Explain |
+| --- | --- | --- |
+| 0:00–0:32 | Publisher pool, campaign brief and traffic replay | The brand and publishers are fictional; sample traffic runs through the real detector. |
+| 0:32–1:02 | AI connection and actual recommendations | The user's Codex supplies the analysis; a popular text-only site is excluded on contextual fit. |
+| 1:02–1:25 | Generated draft, headline edit and save | The advertiser reviews the publisher context and owns the approved wording. |
+| 1:25–2:01 | Fixed terms, actual Sandbox checkout and capture receipt | USD 10 for 30 minutes; only a server-verified completed capture activates the saved creative. |
+| 2:01–2:26 | Publisher placement and report | The ad appears below the normal save action; the report shows 1 view / 1 click. |
 
-Record the real connected environment. Keep fixtures out of the final video. Verify the published video URL, its accessibility and the final Devpost fields separately before submission.
+The recording uses actual local browser frames, English captions and no audio. Login and generation waiting are omitted. A companion SRT is available with the local MP4; no fixture output appears in the recording. The hosted journey was verified separately. Review the video, then verify its published URL and the final Devpost fields before submission.
 
 ## Integration references
 

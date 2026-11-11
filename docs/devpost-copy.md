@@ -52,6 +52,7 @@ PayPal Orders v2, Model Context Protocol, Codex, Claude Code, Next.js, React, Ty
 
 ## Repository and judging instructions
 
+- [Hosted Sandbox demo](https://spikeslot-paypal-ai.onrender.com)
 - [Public source and MIT license](https://github.com/znehraks/spikeslot-paypal-ai/tree/feat/hackathon)
 - [Setup and complete demo journey](../README.md)
 - [Connect Codex or Claude Code](mcp.md)
@@ -59,4 +60,4 @@ PayPal Orders v2, Model Context Protocol, Codex, Claude Code, Next.js, React, Ty
 
 The demo brand and publishers are fictional. Traffic is simulated; the detector and payment/serving flow are real. The default product destination is an explicitly documented example URL. Use a PayPal **personal Sandbox buyer**, never a live account. AI client/model labels are self-reported. No conversion-lift or fraud-audited measurement claim is made.
 
-The final Devpost entry still needs the verified hosted-demo URL and a publicly visible YouTube URL. This copy does not itself submit the project.
+The hosted demo is available. A 2-minute-26-second English-captioned recording has been prepared locally and still needs final review and a publicly visible YouTube URL. This copy does not itself upload the video or submit the project.
