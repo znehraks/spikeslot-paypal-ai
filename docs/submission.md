@@ -1,6 +1,6 @@
 # SpikeSlot — English submission draft
 
-Status: submission text draft. The hosted demo and a local 2-minute-26-second English-captioned video are prepared. Actual Codex and Claude Code generation, Sandbox payment, cancellation, measurement and expiry checks are detailed in [verification.md](verification.md). The public hosted journey was also verified separately. Final video review, upload and Devpost submission are pending.
+Status: [English narrated video published](https://youtu.be/dIh_5OglSUo); [Devpost project prepared](https://devpost.com/software/spikeslot), with final contest submission pending the submitter's required attestations and survey answers. Actual Codex and Claude Code generation, Sandbox payment, cancellation, measurement and expiry checks are detailed in [verification.md](verification.md). The public hosted journey was verified separately.
 
 ## Tagline
 
@@ -41,7 +41,7 @@ The original author-owned SpikeSlot project supplied its traffic spike state mac
 | 1:25–2:01 | Fixed terms, actual Sandbox checkout and capture receipt | USD 10 for 30 minutes; only a server-verified completed capture activates the saved creative. |
 | 2:01–2:26 | Publisher placement and report | The ad appears below the normal save action; the report shows 1 view / 1 click. |
 
-The recording uses actual local browser frames, English captions and synthetic English narration. Login and generation waiting are omitted. A companion SRT and original voiceover are available with the local MP4; no fixture output appears in the recording. The hosted journey was verified separately. Verify the published video URL and final Devpost fields before submission.
+The recording uses actual local browser frames, English captions and synthetic English narration. Login and generation waiting are omitted. A companion SRT and original voiceover are available with the local MP4; no fixture output appears in the recording. The hosted journey was verified separately. Public YouTube playback at 1080p and anonymous oEmbed access were verified; final Devpost submission remains pending.
 
 ## Integration references
 

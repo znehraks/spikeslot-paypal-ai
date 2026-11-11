@@ -74,4 +74,4 @@ One plan represents one demo placement, selected explicitly on the sample publis
 
 The original author-owned SpikeSlot contributes its spike detector and viewability observer. See [source provenance](docs/provenance.md), [MVP contract](docs/SPEC.md), [asset licenses](docs/assets.md), and [English submission draft](docs/submission.md). The new AI matching, sponsorship studio, fixed-price USD order flow, PayPal integration and isolated demo experience were built for this hackathon.
 
-Code: MIT. Photos and fonts retain their own licenses. Actual Devpost submission and demo-video publication are separate, pending actions.
+Code: MIT. Photos and fonts retain their own licenses. [Watch the public English narrated demo](https://youtu.be/dIh_5OglSUo). The [Devpost project](https://devpost.com/software/spikeslot) is prepared; final hackathon submission is pending the submitter's required attestations and survey answers.

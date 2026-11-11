@@ -1,5 +1,13 @@
 # Verification — November 11–12, 2026
 
+## Public video and Devpost draft — November 12 KST
+
+The user authorized YouTube publication and final Devpost submission, then selected their personal channel. The narrated video was published as **Public** on the channel 유정민: https://youtu.be/dIh_5OglSUo. YouTube reported its checks complete with no issues found and displayed the published-video receipt. The watch page played at 1920×1080 with no media error; its transcoded duration was 145.561 seconds. An unauthenticated oEmbed request returned HTTP 200 with the matching title, channel and embed URL. This is publication/playback evidence, not a claim of direct listening or physical-device review.
+
+After the user completed the required reCAPTCHA, Devpost created submission `1296196`, project https://devpost.com/software/spikeslot. The saved project includes the English story, explicit source reuse disclosure, public video, hosted demo, exact GitHub branch, a screenshot thumbnail and two captioned screenshots. The preview displays the YouTube embed and correct links. Empty default story headings were removed before the final preview check. Additional factual fields and private Sandbox judging instructions are prepared; required personal attestations and survey answers are awaiting the submitter. **Final contest submission has not yet been performed.**
+
+Publication and preview screenshots are retained locally under ignored `refs/`. Sandbox credentials remain outside the public repository and public story. The narration tooling checkpoint `e51bd5baceef2c32c24c4ace8e7035dfa20a247c` was pushed to `origin/feat/hackathon` and the remote SHA matched local HEAD. No application code or hosted deployment changed for this publication checkpoint.
+
 ## English narration and submission preparation — November 12 KST
 
 The latest local video is `refs/demo-20261112-v05-narrated/SpikeSlot-demo-English-narrated.mp4`: 145.533 seconds, 1920×1080 / 30fps, English burned captions and a 48 kHz AAC narration track. The original silent video is preserved. The video packet SHA-256 is unchanged, so adding narration did not alter the recorded UI or captions.
