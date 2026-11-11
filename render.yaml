@@ -3,7 +3,7 @@ services:
     name: spikeslot-paypal-ai
     runtime: node
     region: singapore
-    plan: starter
+    plan: 1c-2g
     branch: feat/hackathon
     autoDeployTrigger: off
     buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm build
