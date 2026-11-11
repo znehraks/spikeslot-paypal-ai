@@ -1,6 +1,6 @@
 # SpikeSlot — English submission draft
 
-Status: implementation draft. Complete real AI and PayPal Sandbox verification before recording or submitting. Do not present browser fixtures as live integrations.
+Status: implementation draft. Real PayPal Sandbox approval/capture, cancellation and paid-ad measurement passed with labeled manual copy. Complete real AI generation and repeat the full journey before recording or submitting. Do not present browser fixtures or manual copy as live AI output.
 
 ## Tagline
 

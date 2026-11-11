@@ -2,7 +2,7 @@
 
 **Catch a good moment.** Find a rising independent publisher, make a sponsorship that belongs there, and activate it with PayPal Sandbox.
 
-This hackathon MVP implements the full application path. **Live OpenAI generation and real PayPal Sandbox payment are pending account configuration and verification.** Automated provider doubles and labeled browser fixtures are not evidence of a real payment or AI call. See [verification](docs/verification.md).
+This hackathon MVP implements the full application path. **PayPal Sandbox approval, capture, cancellation, repeated verification and paid-ad measurement have been verified. Live OpenAI generation is still pending account configuration and verification.** The payment check used explicitly labeled manual copy, so it does not establish a complete AI-to-payment demo. Automated provider doubles and labeled browser fixtures are not evidence of a real payment or AI call. See [verification](docs/verification.md).
 
 ## Run locally
 
