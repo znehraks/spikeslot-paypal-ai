@@ -10,7 +10,7 @@ SpikeSlot exposes Streamable HTTP MCP at `APP_URL/api/mcp`. Your Codex or Claude
 4. Paste the provided AI request. Your client reads the facts, reasons about fit and saves recommendations and a draft.
 5. Return to the original browser. Results refresh every five seconds when there are no unsaved brief edits. Open the saved draft, edit the copy, approve and pay with PayPal Sandbox.
 
-`localhost` refers to the computer running the client. For another machine, deploy the app to persistent storage at an HTTPS `APP_URL`; this local demo is not configured for public hosting. No CORS wildcard, cookie sharing or browser-session token is needed for MCP.
+`localhost` refers to the computer running the client. For another machine, deploy the app to persistent storage at an HTTPS origin using the [deployment instructions](deployment.md). The campaign panel supplies the actual hosted MCP URL. No CORS wildcard, cookie sharing or browser-session token is needed for MCP.
 
 ## Codex CLI
 

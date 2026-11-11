@@ -30,6 +30,8 @@ Open **http://localhost:3610**. To run a production build: `pnpm build`, then `p
 
 Without PayPal credentials you can explore publishers, save a brief, replay traffic and connect your AI. Checkout requires Sandbox credentials. No fixture is substituted for a client-generated result or payment.
 
+For a persistent HTTPS judging demo, use the single-instance [Render deployment configuration](docs/deployment.md). Hosting requires a persistent disk; a stateless deployment cannot preserve this database.
+
 ## Try the journey
 
 1. Start a campaign. Review the fictional PetFrame brief, including its example product URL, or provide your own product facts and HTTPS link.
@@ -62,7 +64,7 @@ For an explicitly seeded visual QA environment, see [browser QA instructions](do
 
 Next.js / React / TypeScript, Zod input contracts and embedded PostgreSQL via PGlite. The official MCP TypeScript SDK exposes a stateless Streamable HTTP endpoint; the user’s AI client generates the content. PayPal Orders v2 remains server-side. A signed HttpOnly, SameSite=Lax cookie isolates each demo. Browser mutations require an exact same-origin JSON POST. MCP uses a separate campaign-scoped bearer key, stored only as a hash, expiring after 24 hours and revocable in the browser. An approved creative and destination remain fixed, even if the campaign brief changes later.
 
-This is a **single-process, local judging demo**, not a public multi-tenant marketplace. Sessions last one day. PGlite needs persistent disk and must not be shared by several processes. Do not deploy this as a stateless function or expose it as a public marketplace without adding account authentication, abuse controls and production storage. There is no webhook reconciliation, refund handling, fraud-audited reporting, real creator payout, cross-site SDK onboarding, website crawling or outbound email/DM sending.
+This is a **single-process Sandbox judging demo**, not a production multi-tenant marketplace. Sessions last one day. PGlite needs persistent disk and must not be shared by several processes. Do not deploy this as a stateless function. A production marketplace would additionally need account authentication, stronger abuse controls and production storage. There is no webhook reconciliation, refund handling, fraud-audited reporting, real creator payout, cross-site SDK onboarding, website crawling or outbound email/DM sending.
 
 One plan represents one demo placement, selected explicitly on the sample publisher URL. It is not a production inventory booking or global ad auction. Traffic is synthetic; the detector, editable snapshot, server payment verification and measurement code are real. MCP has no authority over price, duration, payment credentials, destination, approval or capture. Up to eight recommendation/draft saves are allowed per campaign; exact draft retries are idempotent. Client/model labels are self-reported, not attestation.
 
